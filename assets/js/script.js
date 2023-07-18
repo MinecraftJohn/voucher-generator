@@ -12,6 +12,8 @@ const voucherInputLine = document.getElementById("voucher-input-line");
 const durationErrorMsg = document.getElementById("duration-error-msg");
 const voucherErrorMsg = document.getElementById("voucher-error-msg");
 const voucherLineCounter = document.getElementById("voucher-line-counter");
+const printBtn = document.getElementById("print-btn");
+const copyCodeBtn = document.getElementById("copy-code-btn");
 let lineCountCache = 0;
 
 moreSettingsBtn.addEventListener("change", () => {
@@ -22,7 +24,27 @@ moreSettingsBtn.addEventListener("change", () => {
   }
 });
 
-const setHTMLRoot = (property, value) => document.querySelector(":root").style.setProperty(property, value);
+printBtn.addEventListener("click", () => {
+  print();
+});
+
+copyCodeBtn.addEventListener("click", () => {
+  navigator.clipboard
+    .writeText(
+      `const elements = document.querySelectorAll("[name='code'] .td-content .content");let textContent = "";elements.forEach((element) => {textContent += element.textContent + "\\n";});console.log(textContent);`
+    )
+    .then(() => {
+      copyCodeBtn.innerHTML = `<i class="icon">&#xe73e;</i>Copied to clipboard`;
+      setTimeout(() => (copyCodeBtn.innerHTML = `Copy code`), 2000);
+    })
+    .catch(() => {
+      copyCodeBtn.innerHTML = `<i class="icon">&#xe711;</i>Failed to copy`;
+      setTimeout(() => (copyCodeBtn.innerHTML = `Copy code`), 2000);
+    });
+});
+
+const setHTMLRoot = (property, value) =>
+  document.querySelector(":root").style.setProperty(property, value);
 
 const setDurationTextColor = (hexColor) => {
   const color = hexColor.replace("#", "");
@@ -35,14 +57,18 @@ const setDurationTextColor = (hexColor) => {
 };
 
 const saveFormData = () => {
-  dataPageLayout.checked ? setHTMLRoot("--page-layout", "13in") : setHTMLRoot("--page-layout", "11in");
+  dataPageLayout.checked
+    ? setHTMLRoot("--page-layout", "13in")
+    : setHTMLRoot("--page-layout", "11in");
   setHTMLRoot("--duration-bg-color", dataDurationBG.value);
   setDurationTextColor(dataDurationBG.value);
   dataColorLogo.checked
     ? setHTMLRoot("--voucher-logo", "url(../svg/wifi-connect-logo.svg)")
     : setHTMLRoot("--voucher-logo", "url(../svg/wifi-connect-logo-black.svg)");
 
-  const documentContainer = document.querySelector(".voucher-preview-container");
+  const documentContainer = document.querySelector(
+    ".voucher-preview-container"
+  );
   let maxItem;
   const vouchers = dataVouchers.value.split("\n");
 
@@ -52,12 +78,16 @@ const saveFormData = () => {
     documentContainer.innerHTML += `<section class="flex page-layout"></section>`;
   }
   vouchers.map((code, index) => {
-    document.querySelectorAll(".page-layout")[Math.ceil((index + 1) / maxItem - 1)].innerHTML += `
+    document.querySelectorAll(".page-layout")[
+      Math.ceil((index + 1) / maxItem - 1)
+    ].innerHTML += `
       <div class="relative voucher-container">
         <div class="logo"></div>
         <p class="relative">${code}</p>
         <span class="absolute">${dataDurationTime.value} ${
-      Number(dataDurationTime.value) > 1 ? dataDurationType.value + "s" : dataDurationType.value
+      Number(dataDurationTime.value) > 1
+        ? dataDurationType.value + "s"
+        : dataDurationType.value
     }</span>
       </div>`;
   });
@@ -115,7 +145,10 @@ dataSubmitBtn.addEventListener("click", () => {
   ) {
     triggeredErrorMsgDuration(true);
     triggeredErrorMsgVoucher(true);
-  } else if (dataDurationTime.value.length <= 0 || dataDurationTime.value == 0) {
+  } else if (
+    dataDurationTime.value.length <= 0 ||
+    dataDurationTime.value == 0
+  ) {
     triggeredErrorMsgDuration(true);
   } else if (dataVouchers.value.length < 6) {
     triggeredErrorMsgVoucher(true);

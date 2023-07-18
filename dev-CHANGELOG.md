@@ -2,6 +2,12 @@
 All notable development changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
 
+### v23.7.18a
+> July 18, 2023
+- Added functionality to print button.
+- Fixed print mode layout.
+- Added a default/first step section.
+
 ### v23.7.15a
 > July 15, 2023
 - Separated the project from Wi-Fi Connect repository.
