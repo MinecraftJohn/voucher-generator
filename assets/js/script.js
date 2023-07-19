@@ -13,6 +13,9 @@ const durationErrorMsg = document.getElementById("duration-error-msg");
 const voucherErrorMsg = document.getElementById("voucher-error-msg");
 const voucherLineCounter = document.getElementById("voucher-line-counter");
 const printBtn = document.getElementById("print-btn");
+const learnMoreBtn = document.getElementById("learn-more-btn");
+const learnMoreDialog = document.getElementById("learn-more-dialog");
+const dialogCloseBtn = document.getElementById("dialog-close-btn");
 const copyCodeBtn = document.getElementById("copy-code-btn");
 let lineCountCache = 0;
 
@@ -24,9 +27,7 @@ moreSettingsBtn.addEventListener("change", () => {
   }
 });
 
-printBtn.addEventListener("click", () => {
-  print();
-});
+printBtn.addEventListener("click", () => print());
 
 copyCodeBtn.addEventListener("click", () => {
   navigator.clipboard
@@ -43,8 +44,25 @@ copyCodeBtn.addEventListener("click", () => {
     });
 });
 
-const setHTMLRoot = (property, value) =>
-  document.querySelector(":root").style.setProperty(property, value);
+const closeModal = (elmnt) => {
+  elmnt.classList.remove("open");
+  setTimeout(() => elmnt.close(), 200);
+};
+
+learnMoreBtn.addEventListener("click", () => {
+  learnMoreDialog.showModal();
+  learnMoreDialog.classList.add("open");
+  learnMoreDialog.addEventListener("click", (e) => {
+    if (e.target === learnMoreDialog) {
+      closeModal(learnMoreDialog);
+    }
+  });
+});
+dialogCloseBtn.addEventListener("click", () => {
+  closeModal(learnMoreDialog);
+});
+
+const setHTMLRoot = (property, value) => document.querySelector(":root").style.setProperty(property, value);
 
 const setDurationTextColor = (hexColor) => {
   const color = hexColor.replace("#", "");
@@ -57,18 +75,14 @@ const setDurationTextColor = (hexColor) => {
 };
 
 const saveFormData = () => {
-  dataPageLayout.checked
-    ? setHTMLRoot("--page-layout", "13in")
-    : setHTMLRoot("--page-layout", "11in");
+  dataPageLayout.checked ? setHTMLRoot("--page-layout", "13in") : setHTMLRoot("--page-layout", "11in");
   setHTMLRoot("--duration-bg-color", dataDurationBG.value);
   setDurationTextColor(dataDurationBG.value);
   dataColorLogo.checked
     ? setHTMLRoot("--voucher-logo", "url(../svg/wifi-connect-logo.svg)")
     : setHTMLRoot("--voucher-logo", "url(../svg/wifi-connect-logo-black.svg)");
 
-  const documentContainer = document.querySelector(
-    ".voucher-preview-container"
-  );
+  const documentContainer = document.querySelector(".voucher-preview-container");
   let maxItem;
   const vouchers = dataVouchers.value.split("\n");
 
@@ -78,19 +92,16 @@ const saveFormData = () => {
     documentContainer.innerHTML += `<section class="flex page-layout"></section>`;
   }
   vouchers.map((code, index) => {
-    document.querySelectorAll(".page-layout")[
-      Math.ceil((index + 1) / maxItem - 1)
-    ].innerHTML += `
+    document.querySelectorAll(".page-layout")[Math.ceil((index + 1) / maxItem - 1)].innerHTML += `
       <div class="relative voucher-container">
         <div class="logo"></div>
         <p class="relative">${code}</p>
         <span class="absolute">${dataDurationTime.value} ${
-      Number(dataDurationTime.value) > 1
-        ? dataDurationType.value + "s"
-        : dataDurationType.value
+      Number(dataDurationTime.value) > 1 ? dataDurationType.value + "s" : dataDurationType.value
     }</span>
       </div>`;
   });
+  printBtn.removeAttribute("disabled");
 };
 
 const triggeredErrorMsgDuration = (value) => {
@@ -145,10 +156,7 @@ dataSubmitBtn.addEventListener("click", () => {
   ) {
     triggeredErrorMsgDuration(true);
     triggeredErrorMsgVoucher(true);
-  } else if (
-    dataDurationTime.value.length <= 0 ||
-    dataDurationTime.value == 0
-  ) {
+  } else if (dataDurationTime.value.length <= 0 || dataDurationTime.value == 0) {
     triggeredErrorMsgDuration(true);
   } else if (dataVouchers.value.length < 6) {
     triggeredErrorMsgVoucher(true);

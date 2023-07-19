@@ -2,6 +2,12 @@
 All notable development changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
 
+### v23.7.19a
+> July 19, 2023
+- Fixed 1px error on print mode layout.
+- Added disabled state for buttons and make print button disabled by default.
+- Added learn more modal with open and close animation on it.
+
 ### v23.7.18a
 > July 18, 2023
 - Added functionality to print button.

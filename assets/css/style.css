@@ -210,6 +210,17 @@ button:hover {
   opacity: 0.9;
 }
 
+button:active {
+  opacity: 0.8;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+button:disabled {
+  pointer-events: none;
+  background-color: rgba(255, 255, 255, 0.1581);
+  border: none;
+}
+
 .btn-standard {
   flex-direction: row;
   width: auto;
@@ -231,9 +242,10 @@ button:hover {
   border: 1px solid rgba(255, 255, 255, 0.093);
 }
 
-button:active {
-  opacity: 0.8;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+.btn-standard:disabled {
+  background-color: rgba(255, 255, 255, 0.0419);
+  color: rgba(255, 255, 255, 0.3628);
+  border: 1px solid rgba(255, 255, 255, 0.093);
 }
 
 h1 {
@@ -298,7 +310,6 @@ aside {
 }
 
 .voucher-textarea {
-  display: flex;
   height: 256px;
   background-color: rgba(30, 30, 30, 0.7);
   border: 1px solid #30363d;
@@ -622,9 +633,76 @@ main {
   color: #a3a6ac;
 }
 
-.get-started a {
+.get-started u {
   font-size: 12px;
   color: #a3a6ac;
+  cursor: pointer;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.333);
+}
+
+dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  flex-direction: column;
+  background-color: #1a2030;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  width: 512px;
+  opacity: 0;
+  transition: all 200ms;
+}
+
+dialog.open {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+dialog header {
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 8px 8px 16px;
+}
+
+.btn-close {
+  background-color: transparent;
+  border: none;
+  width: 32px;
+  padding: 0 0 0 2px;
+  border-radius: 4px;
+}
+
+.btn-close:hover {
+  background-color: rgba(255, 255, 255, 0.0605);
+}
+
+.btn-close:active {
+  background-color: rgba(255, 255, 255, 0.0419);
+  color: rgba(255, 255, 255, 0.786);
+  border: none;
+}
+
+dialog .body {
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 8px 8px 16px;
+}
+
+dialog .body p {
+  text-align: left;
+  margin: 0;
+}
+
+dialog .body * {
+  font-size: 12px;
+}
+
+dialog .body ol {
+  list-style-position: inside;
 }
 
 @media print {
@@ -668,7 +746,7 @@ main {
   .page-layout {
     width: auto;
     height: auto;
-    padding: 0;
+    padding: 0 0 2px 0;
     page-break-after: always;
   }
 }

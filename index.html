@@ -6,11 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#F1F3F9" />
     <title>Voucher Generator</title>
-    <link
-      rel="shortcut icon"
-      href="assets/img/favicon.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <script src="assets/js/script.js" defer></script>
   </head>
@@ -25,13 +21,7 @@
           <h6>Duration:</h6>
           <div class="flex input-select-group">
             <div class="relative input-container">
-              <input
-                type="number"
-                placeholder="0"
-                min="0"
-                class="input"
-                id="data-duration-time"
-              />
+              <input type="number" placeholder="0" min="0" class="input" id="data-duration-time" />
               <div id="duration-input-line" class="absolute input-line"></div>
             </div>
             <div class="relative flex select-group">
@@ -47,10 +37,8 @@
         </div>
         <div class="flex group">
           <h6>Voucher Codes:</h6>
-          <div class="relative voucher-textarea">
-            <textarea id="voucher-line-counter" class="textarea line-counter">
-1</textarea
-            >
+          <div class="relative flex voucher-textarea">
+            <textarea id="voucher-line-counter" class="textarea line-counter">1</textarea>
             <textarea
               id="data-vouchers-code"
               wrap="off"
@@ -59,15 +47,11 @@
             ></textarea>
             <div id="voucher-input-line" class="absolute input-line"></div>
           </div>
-          <p id="voucher-error-msg" class="hidden">
-            Enter a valid voucher code.
-          </p>
+          <p id="voucher-error-msg" class="hidden">Enter a valid voucher code.</p>
         </div>
         <div class="flex details">
           <input type="checkbox" id="more-settings" />
-          <label for="more-settings" class="flex more-settings"
-            >More options <i class="icon">&#xe70d;</i>
-          </label>
+          <label for="more-settings" class="flex more-settings">More options <i class="icon">&#xe70d;</i> </label>
           <div class="more-settings-container">
             <div class="flex group-option">
               <p>Layout Size (8.5x13in):</p>
@@ -79,11 +63,7 @@
             <div class="flex group-option">
               <p>Duration Background:</p>
               <div class="flex input-select-group">
-                <input
-                  type="color"
-                  class="input color btn-standard"
-                  id="data-duration-bg"
-                />
+                <input type="color" class="input color btn-standard" id="data-duration-bg" />
               </div>
             </div>
             <div class="flex group-option">
@@ -97,18 +77,14 @@
         </div>
       </section>
       <section class="absolute form-footer">
-        <button id="data-submit-btn">
-          <i class="icon">&#xe73e;</i>Save changes
-        </button>
+        <button id="data-submit-btn">Save changes</button>
       </section>
     </aside>
     <main>
       <header class="header-section">
         <div class="flex header-container">
           <h1>Generated Preview</h1>
-          <button id="print-btn" class="btn-standard">
-            <i class="icon">&#xe749;</i>Print vouchers
-          </button>
+          <button id="print-btn" class="btn-standard" disabled><i class="icon">&#xe749;</i>Print vouchers</button>
         </div>
       </header>
       <section class="flex voucher-preview-container">
@@ -117,9 +93,28 @@
           <div>
             <h2>Hello there, let's get started here.</h2>
             <p>
-              Please copy the code then paste it on the console drawer at Omada
-              Controller page. <a href="#">Learn more</a>
+              Please copy the code then paste it on the console drawer at Omada Controller page.
+              <u id="learn-more-btn">Learn more</u>
             </p>
+            <dialog id="learn-more-dialog">
+              <header class="flex">
+                <h2>Let's get started</h2>
+                <button id="dialog-close-btn" class="btn-close icon">&#xe711;</button>
+              </header>
+              <div class="flex body">
+                <p>
+                  This is my easy way to scrape the voucher codes from Omada Controller site and copy it to my clipboard
+                  instead of copying it one-by-one. Let's do it.
+                </p>
+                <ol>
+                  <li>Copy this code to your clipboard</li>
+                  <li>test</li>
+                  <li>test</li>
+                  <li>test</li>
+                </ol>
+              </div>
+              <button>OK</button>
+            </dialog>
           </div>
           <button id="copy-code-btn" class="btn-standard">Copy code</button>
         </div>
