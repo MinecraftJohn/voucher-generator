@@ -17,7 +17,9 @@ const learnMoreBtn = document.getElementById("learn-more-btn");
 const learnMoreDialog = document.getElementById("learn-more-dialog");
 const dialogCloseBtn = document.getElementById("dialog-close-btn");
 const copyCodeBtn = document.getElementById("copy-code-btn");
+const copyCodeBlockBtn = document.querySelector(".code-block button");
 let lineCountCache = 0;
+const codeText = `let scrapedCodes = "";document.querySelectorAll("[name='code'] .td-content .content").forEach((elmnt) => {scrapedCodes += elmnt.innerText + "\\n";});console.log(scrapedCodes);`;
 
 moreSettingsBtn.addEventListener("change", () => {
   if (moreSettingsBtn.checked) {
@@ -31,9 +33,7 @@ printBtn.addEventListener("click", () => print());
 
 copyCodeBtn.addEventListener("click", () => {
   navigator.clipboard
-    .writeText(
-      `const elements = document.querySelectorAll("[name='code'] .td-content .content");let textContent = "";elements.forEach((element) => {textContent += element.textContent + "\\n";});console.log(textContent);`
-    )
+    .writeText(codeText)
     .then(() => {
       copyCodeBtn.innerHTML = `<i class="icon">&#xe73e;</i>Copied to clipboard`;
       setTimeout(() => (copyCodeBtn.innerHTML = `Copy code`), 2000);
@@ -56,6 +56,18 @@ learnMoreBtn.addEventListener("click", () => {
     if (e.target === learnMoreDialog) {
       closeModal(learnMoreDialog);
     }
+  });
+  copyCodeBlockBtn.addEventListener("click", () => {
+    navigator.clipboard
+      .writeText(codeText)
+      .then(() => {
+        copyCodeBlockBtn.innerHTML = `&#xe73e;`;
+        setTimeout(() => (copyCodeBlockBtn.innerHTML = `&#xe8c8;`), 2000);
+      })
+      .catch(() => {
+        copyCodeBlockBtn.innerHTML = `&#xe711;`;
+        setTimeout(() => (copyCodeBlockBtn.innerHTML = `&#xe8c8;`), 2000);
+      });
   });
 });
 dialogCloseBtn.addEventListener("click", () => {

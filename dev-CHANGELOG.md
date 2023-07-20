@@ -2,6 +2,10 @@
 All notable development changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
 
+### v23.7.20a
+> July 20, 2023
+- Added block of codes to copy with syntax color on it.
+
 ### v23.7.19a
 > July 19, 2023
 - Fixed 1px error on print mode layout.

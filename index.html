@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#F1F3F9" />
-    <title>Voucher Generator</title>
+    <title>Wi-Fi Connect - Voucher Generator</title>
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <script src="assets/js/script.js" defer></script>
@@ -107,10 +107,24 @@
                   instead of copying it one-by-one. Let's do it.
                 </p>
                 <ol>
-                  <li>Copy this code to your clipboard</li>
-                  <li>test</li>
-                  <li>test</li>
-                  <li>test</li>
+                  <li class="flex">
+                    1. Copy this code to your clipboard
+                    <div class="relative code-block">
+                      <button class="absolute btn-standard icon" title="Copy to clipboard">&#xe8c8;</button>
+                      <blue>let</blue>&nbsp;<skyblue>scrapedCodes</skyblue>&nbsp;=&nbsp;<string>""</string>;<br />
+                      <skyblue>document</skyblue>.<yellow>querySelectorAll</yellow><gold>(</gold
+                      ><string>"[name='code'] .td-content .content"</string><gold>)</gold>.<yellow>forEach</yellow
+                      ><gold>(</gold><skyblue>elmnt</skyblue>&nbsp;<blue>=></blue>&nbsp;<magenta>{</magenta
+                      ><skyblue>scrapedCodes</skyblue
+                      >&nbsp;+=&nbsp;<skyblue>elmnt</skyblue>.<skyblue>innerText</skyblue>&nbsp;+&nbsp;<string>"</string
+                      ><orange>\n</orange><string>"</string><magenta>}</magenta><gold>)</gold>;<br />
+                      <skyblue>console</skyblue>.<yellow>log</yellow><gold>(</gold><skyblue>scrapedCodes</skyblue
+                      ><gold>)</gold>;
+                    </div>
+                  </li>
+                  <li class="flex">test</li>
+                  <li class="flex">test</li>
+                  <li class="flex">test</li>
                 </ol>
               </div>
               <button>OK</button>

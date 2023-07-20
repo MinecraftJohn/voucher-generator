@@ -178,7 +178,7 @@ html {
 }
 
 .icon {
-  font-family: "Segoe Fluent Icons";
+  font-family: "Segoe Fluent Icons" !important;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -703,6 +703,61 @@ dialog .body * {
 
 dialog .body ol {
   list-style-position: inside;
+}
+
+dialog .body ol li {
+  flex-direction: column;
+  gap: 8px;
+}
+
+.code-block {
+  background-color: rgba(30, 30, 30, 0.7);
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  padding: 8px 42px 8px 8px;
+}
+
+.code-block,
+.code-block * {
+  font-family: Consolas, "Courier New", monospace;
+  line-height: 1.6;
+}
+
+.code-block button {
+  top: 6px;
+  right: 6px;
+  font-size: 14px;
+  line-height: 14px;
+  padding: 0;
+  width: 32px;
+}
+
+blue {
+  color: #569cd6;
+}
+
+skyblue {
+  color: #9cdcfe;
+}
+
+string {
+  color: #ce9178;
+}
+
+yellow {
+  color: #dcdcaa;
+}
+
+gold {
+  color: #ffd700;
+}
+
+magenta {
+  color: #da70d6;
+}
+
+orange {
+  color: #d7ba7d;
 }
 
 @media print {
