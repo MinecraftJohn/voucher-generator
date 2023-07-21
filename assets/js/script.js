@@ -19,7 +19,9 @@ const dialogCloseBtn = document.getElementById("dialog-close-btn");
 const copyCodeBtn = document.getElementById("copy-code-btn");
 const copyCodeBlockBtn = document.querySelector(".code-block button");
 let lineCountCache = 0;
-const codeText = `let scrapedCodes = "";document.querySelectorAll("[name='code'] .td-content .content").forEach((elmnt) => {scrapedCodes += elmnt.innerText + "\\n";});console.log(scrapedCodes);`;
+const codeText = `let scrapedCodes = "";\n
+document.querySelectorAll("[name='code'] .td-content .content").forEach((elmnt) => {scrapedCodes += elmnt.innerText + "\\n"});\n
+console.log(scrapedCodes);`;
 
 moreSettingsBtn.addEventListener("change", () => {
   if (moreSettingsBtn.checked) {

@@ -2,6 +2,11 @@
 All notable development changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
 
+### v23.7.21a
+> July 21, 2023
+- Fixed block of codes not wrapping properly.
+- Added step 2 on learn more modal.
+
 ### v23.7.20a
 > July 20, 2023
 - Added block of codes to copy with syntax color on it.

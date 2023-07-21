@@ -106,25 +106,40 @@
                   This is my easy way to scrape the voucher codes from Omada Controller site and copy it to my clipboard
                   instead of copying it one-by-one. Let's do it.
                 </p>
-                <ol>
+                <ol class="flex">
                   <li class="flex">
-                    1. Copy this code to your clipboard
+                    <p>1. Copy this code to your clipboard</p>
                     <div class="relative code-block">
                       <button class="absolute btn-standard icon" title="Copy to clipboard">&#xe8c8;</button>
-                      <blue>let</blue>&nbsp;<skyblue>scrapedCodes</skyblue>&nbsp;=&nbsp;<string>""</string>;<br />
-                      <skyblue>document</skyblue>.<yellow>querySelectorAll</yellow><gold>(</gold
-                      ><string>"[name='code'] .td-content .content"</string><gold>)</gold>.<yellow>forEach</yellow
-                      ><gold>(</gold><skyblue>elmnt</skyblue>&nbsp;<blue>=></blue>&nbsp;<magenta>{</magenta
-                      ><skyblue>scrapedCodes</skyblue
-                      >&nbsp;+=&nbsp;<skyblue>elmnt</skyblue>.<skyblue>innerText</skyblue>&nbsp;+&nbsp;<string>"</string
-                      ><orange>\n</orange><string>"</string><magenta>}</magenta><gold>)</gold>;<br />
-                      <skyblue>console</skyblue>.<yellow>log</yellow><gold>(</gold><skyblue>scrapedCodes</skyblue
-                      ><gold>)</gold>;
+                      <span class="blue">let</span>
+                      <span class="skyblue">scrapedCodes</span>
+                      <span>=</span>
+                      <span class="string">""</span><span>;</span><br />
+                      <span class="skyblue">document</span><span>.</span><span class="yellow">querySelectorAll</span
+                      ><span class="gold">(</span><span class="string">"[name='code'] .td-content .content"</span
+                      ><span class="gold">)</span><span>.</span><span class="yellow">forEach</span
+                      ><span class="gold">(</span><span class="skyblue">elmnt</span>
+                      <span class="blue">=></span>
+                      <span class="magenta">{</span><span class="skyblue">scrapedCodes</span>
+                      <span>+=</span>
+                      <span class="skyblue">elmnt</span><span>.</span><span class="skyblue">innerText</span>
+                      <span>+</span>
+                      <span class="string">"</span><span class="orange">\n</span><span class="string">"</span
+                      ><span class="magenta">}</span><span class="gold">)</span><span>;</span><br />
+                      <span class="skyblue">console</span><span>.</span><span class="yellow">log</span
+                      ><span class="gold">(</span><span class="skyblue">scrapedCodes</span><span class="gold">)</span
+                      ><span>;</span>
                     </div>
                   </li>
-                  <li class="flex">test</li>
-                  <li class="flex">test</li>
-                  <li class="flex">test</li>
+                  <li class="flex">
+                    <p>
+                      2. Go to your Omada Controller tab then at your Voucher section select 50/page, to speed up
+                      scraping the voucher codes
+                    </p>
+                    <img src="assets/img/get-started/50-per-page.jpg" alt="50/page" />
+                  </li>
+                  <li class="flex">3. test</li>
+                  <li class="flex">4. test</li>
                 </ol>
               </div>
               <button>OK</button>
