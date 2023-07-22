@@ -23,17 +23,17 @@ const codeText = `let scrapedCodes = "";\n
 document.querySelectorAll("[name='code'] .td-content .content").forEach((elmnt) => {scrapedCodes += elmnt.innerText + "\\n"});\n
 console.log(scrapedCodes);`;
 
-moreSettingsBtn.addEventListener("change", () => {
+moreSettingsBtn.onchange = () => {
   if (moreSettingsBtn.checked) {
     moreSettingsIcon[0].innerText = "\ue70e";
   } else {
     moreSettingsIcon[0].innerText = "\ue70d";
   }
-});
+};
 
-printBtn.addEventListener("click", () => print());
+printBtn.onclick = () => print();
 
-copyCodeBtn.addEventListener("click", () => {
+copyCodeBtn.onclick = () => {
   navigator.clipboard
     .writeText(codeText)
     .then(() => {
@@ -44,22 +44,22 @@ copyCodeBtn.addEventListener("click", () => {
       copyCodeBtn.innerHTML = `<i class="icon">&#xe711;</i>Failed to copy`;
       setTimeout(() => (copyCodeBtn.innerHTML = `Copy code`), 2000);
     });
-});
+};
 
 const closeModal = (elmnt) => {
   elmnt.classList.remove("open");
   setTimeout(() => elmnt.close(), 200);
 };
 
-learnMoreBtn.addEventListener("click", () => {
+learnMoreBtn.onclick = () => {
   learnMoreDialog.showModal();
   learnMoreDialog.classList.add("open");
-  learnMoreDialog.addEventListener("click", (e) => {
+  learnMoreDialog.onclick = (e) => {
     if (e.target === learnMoreDialog) {
       closeModal(learnMoreDialog);
     }
-  });
-  copyCodeBlockBtn.addEventListener("click", () => {
+  };
+  copyCodeBlockBtn.onclick = () => {
     navigator.clipboard
       .writeText(codeText)
       .then(() => {
@@ -70,11 +70,11 @@ learnMoreBtn.addEventListener("click", () => {
         copyCodeBlockBtn.innerHTML = `&#xe711;`;
         setTimeout(() => (copyCodeBlockBtn.innerHTML = `&#xe8c8;`), 2000);
       });
-  });
-});
-dialogCloseBtn.addEventListener("click", () => {
+  };
+};
+dialogCloseBtn.onclick = () => {
   closeModal(learnMoreDialog);
-});
+};
 
 const setHTMLRoot = (property, value) => document.querySelector(":root").style.setProperty(property, value);
 
@@ -161,7 +161,7 @@ dataVouchers.addEventListener("input", () => {
   updateLineCounter();
 });
 
-dataSubmitBtn.addEventListener("click", () => {
+dataSubmitBtn.onclick = () => {
   triggeredErrorMsgDuration(false);
   triggeredErrorMsgVoucher(false);
   if (
@@ -179,4 +179,4 @@ dataSubmitBtn.addEventListener("click", () => {
     triggeredErrorMsgVoucher(false);
     saveFormData();
   }
-});
+};
