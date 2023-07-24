@@ -59,6 +59,9 @@ learnMoreBtn.onclick = () => {
       closeModal(learnMoreDialog);
     }
   };
+  dialogCloseBtn.onclick = () => {
+    closeModal(learnMoreDialog);
+  };
   copyCodeBlockBtn.onclick = () => {
     navigator.clipboard
       .writeText(codeText)
@@ -71,9 +74,7 @@ learnMoreBtn.onclick = () => {
         setTimeout(() => (copyCodeBlockBtn.innerHTML = `&#xe8c8;`), 2000);
       });
   };
-};
-dialogCloseBtn.onclick = () => {
-  closeModal(learnMoreDialog);
+  document.querySelector("dialog button.ok").onclick = () => closeModal(learnMoreDialog);
 };
 
 const setHTMLRoot = (property, value) => document.querySelector(":root").style.setProperty(property, value);
@@ -179,4 +180,17 @@ dataSubmitBtn.onclick = () => {
     triggeredErrorMsgVoucher(false);
     saveFormData();
   }
+};
+
+const mediaScreen = window.matchMedia("(max-width: 800px)");
+const checkMediaScreen = () => {
+  if (!mediaScreen.matches) {
+    printBtn.innerHTML = `<i class="icon">&#xe749;</i>Print vouchers`;
+  } else {
+    printBtn.innerHTML = `<i class="icon">&#xe749;</i>`;
+  }
+};
+checkMediaScreen();
+mediaScreen.onchange = () => {
+  checkMediaScreen();
 };

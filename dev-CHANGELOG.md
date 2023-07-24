@@ -2,8 +2,13 @@
 All notable development changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
 
-### v23.7.21a
-> July 21, 2023
+### v23.7.24a
+> July 24, 2023
+- Improved responsiveness.
+- Added close functionality to OK button on dialog learn more.
+
+### v23.7.22a
+> July 22, 2023
 - Fixed voucher code container items alignment on print mode.
 - All steps are added on learn more modal.
 

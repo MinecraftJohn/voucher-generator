@@ -109,31 +109,6 @@
 
 /* ################################################################ */
 
-@media screen and (min-width: 444px) {
-  *::-webkit-scrollbar {
-    background-color: transparent;
-    width: 8px;
-    height: 8px;
-  }
-
-  *::-webkit-scrollbar-thumb {
-    background-color: rgba(151, 154, 162, 0.5);
-    border-radius: 4px;
-  }
-
-  *::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(151, 154, 162, 0.75);
-  }
-
-  *::-webkit-scrollbar-thumb:active {
-    background-color: rgb(151, 154, 162);
-  }
-
-  *::-webkit-scrollbar-corner {
-    background-color: transparent;
-  }
-}
-
 :root {
   --page-layout: 13in;
   --duration-bg-color: #000000;
@@ -621,6 +596,13 @@ main {
   line-height: 24px;
 }
 
+.get-started > div {
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 90%;
+}
+
 .get-started h2 {
   font-size: 16px;
   text-align: center;
@@ -629,7 +611,7 @@ main {
 .get-started p {
   text-align: center;
   width: 60ch;
-  margin-top: 8px;
+  max-width: 100%;
   color: #a3a6ac;
 }
 
@@ -640,7 +622,7 @@ main {
 }
 
 dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.333);
+  background-color: rgba(0, 0, 0, 0.666);
 }
 
 dialog {
@@ -704,10 +686,9 @@ dialog .body * {
 dialog .body ol {
   flex-direction: column;
   gap: 16px;
-  /* min-height: 128px; make the modal responsive */
-  height: 512px;
-  max-height: 20vh;
+  height: 384px;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 dialog .body ol li {
@@ -718,12 +699,14 @@ dialog .body ol li {
 
 dialog .body ol li p {
   width: 60ch;
+  max-width: 100%;
 }
 
 dialog .body ol li img {
-  margin: 0 8px;
+  margin-left: 8px;
   border-radius: 4px;
   border: 1px solid #30363d;
+  max-width: calc(100% - 16px);
 }
 
 .code-block {
@@ -826,4 +809,69 @@ dialog button.ok {
     padding: 2px 0 2px 1px;
     page-break-after: always;
   }
+}
+
+@media screen and (min-width: 800px) {
+  *::-webkit-scrollbar {
+    background-color: transparent;
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: rgba(151, 154, 162, 0.5);
+    border-radius: 4px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(151, 154, 162, 0.75);
+  }
+
+  *::-webkit-scrollbar-thumb:active {
+    background-color: rgb(151, 154, 162);
+  }
+
+  *::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    flex-direction: column-reverse;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .header-section {
+    padding: 0;
+  }
+
+  .header-container {
+    height: 64px;
+    padding: 0 5%;
+    border-radius: 0;
+  }
+
+  #print-btn {
+    width: 32px;
+    padding: 0;
+  }
+
+  /* .get-started > div {
+    width: 90%;
+    background-color: red;
+  }
+
+  .get-started h2 {
+    width: 90%;
+    background-color: gray;
+  }
+
+  .get-started p {
+    width: 90%;
+    background-color: green;
+  } */
 }
