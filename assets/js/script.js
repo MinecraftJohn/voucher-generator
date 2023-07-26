@@ -12,7 +12,6 @@ const voucherInputLine = document.getElementById("voucher-input-line");
 const durationErrorMsg = document.getElementById("duration-error-msg");
 const voucherErrorMsg = document.getElementById("voucher-error-msg");
 const voucherLineCounter = document.getElementById("voucher-line-counter");
-const printBtn = document.getElementById("print-btn");
 const learnMoreBtn = document.getElementById("learn-more-btn");
 const learnMoreDialog = document.getElementById("learn-more-dialog");
 const dialogCloseBtn = document.getElementById("dialog-close-btn");
@@ -31,7 +30,7 @@ moreSettingsBtn.onchange = () => {
   }
 };
 
-printBtn.onclick = () => print();
+document.getElementById("print-btn").onclick = () => print();
 
 copyCodeBtn.onclick = () => {
   navigator.clipboard
@@ -116,7 +115,8 @@ const saveFormData = () => {
     }</span>
       </div>`;
   });
-  printBtn.removeAttribute("disabled");
+  document.getElementById("print-btn").removeAttribute("disabled");
+  document.querySelector("html").scrollTop = 0;
 };
 
 const triggeredErrorMsgDuration = (value) => {
@@ -185,9 +185,17 @@ dataSubmitBtn.onclick = () => {
 const mediaScreen = window.matchMedia("(max-width: 800px)");
 const checkMediaScreen = () => {
   if (!mediaScreen.matches) {
-    printBtn.innerHTML = `<i class="icon">&#xe749;</i>Print vouchers`;
+    document.querySelector(".header-container").innerHTML = `<h1>Generated Preview</h1>
+    <button id="print-btn" class="btn-standard" ${
+      !document.querySelector(".get-started") ? "" : "disabled"
+    }><i class="icon">&#xe749;</i>Print vouchers</button>`;
   } else {
-    printBtn.innerHTML = `<i class="icon">&#xe749;</i>`;
+    document.querySelector(
+      ".header-container"
+    ).innerHTML = `<img src="assets/svg/wifi-connect-logo.svg" alt="Wi-Fi Connect Logo" class="logo-img" />
+    <button id="print-btn" class="btn-standard" ${
+      !document.querySelector(".get-started") ? "" : "disabled"
+    }><i class="icon">&#xe749;</i></button>`;
   }
 };
 checkMediaScreen();

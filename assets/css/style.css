@@ -311,7 +311,22 @@ aside {
   border-bottom: 1px solid #30363d;
 }
 
-.heading-container img {
+.heading-container > div {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 0;
+}
+
+.heading-container > div * {
+  color: #a3a6ac;
+}
+
+.heading-container p {
+  padding-top: 4px;
+}
+
+.logo-img {
   height: 32px;
   user-select: none;
   pointer-events: none;
@@ -482,7 +497,7 @@ aside {
 
 main {
   flex-grow: 1;
-  overflow-y: scroll;
+  overflow-x: hidden;
   height: 100vh;
 }
 
@@ -510,10 +525,6 @@ main {
   height: 80px;
   padding: 0 32px;
   border-radius: 8px;
-}
-
-.heading-container p {
-  padding-top: 4px;
 }
 
 .voucher-preview-container {
@@ -600,7 +611,7 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  width: 90%;
+  width: 80%;
 }
 
 .get-started h2 {
@@ -837,12 +848,27 @@ dialog button.ok {
 }
 
 @media screen and (max-width: 800px) {
+  html {
+    overflow: auto;
+  }
+
   body {
     flex-direction: column-reverse;
   }
 
-  h1 {
-    font-size: 20px;
+  aside {
+    width: 100%;
+    height: auto;
+    border: none;
+  }
+
+  .heading-container {
+    padding: 0 5%;
+    border-bottom: 1px solid #30363d;
+  }
+
+  main {
+    height: calc(100vh - 64px);
   }
 
   .header-section {
@@ -860,18 +886,31 @@ dialog button.ok {
     padding: 0;
   }
 
-  /* .get-started > div {
-    width: 90%;
-    background-color: red;
+  .heading-container {
+    border-top: 1px solid #30363d;
+    border-bottom: none;
   }
 
-  .get-started h2 {
-    width: 90%;
-    background-color: gray;
+  .heading-container > div {
+    display: flex;
   }
 
-  .get-started p {
-    width: 90%;
-    background-color: green;
-  } */
+  .heading-container > img {
+    display: none;
+  }
+
+  .heading-container > p {
+    display: none;
+  }
+
+  .form-container {
+    padding: 16px 5%;
+    height: auto;
+  }
+
+  .form-footer {
+    position: static;
+    padding: 5%;
+    border-top: none;
+  }
 }

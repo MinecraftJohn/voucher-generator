@@ -2,6 +2,11 @@
 All notable development changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
 
+### v23.7.26a
+> July 26, 2023
+- Improved responsiveness.
+- Added note to a sentence on learn more modal.
+
 ### v23.7.24a
 > July 24, 2023
 - Improved responsiveness.
