@@ -2,6 +2,10 @@
 All notable development changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
 
+### v23.7.27a
+> July 27, 2023
+- Updated `README.md`.
+
 ### v23.7.26a
 > July 26, 2023
 - Improved responsiveness.
