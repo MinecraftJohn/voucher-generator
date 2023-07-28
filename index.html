@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#F1F3F9" />
+    <title>Wi-Fi Connect - Voucher Generator</title>
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/js/script.js" defer></script>
+  </head>
+  <body class="flex">
+    <aside class="relative flex">
+      <section class="relative heading-container">
+        <div>
+          <i class="icon">&#xe70e;</i>
+          <p>Scroll up from here to edit vouchers</p>
+        </div>
+        <img src="assets/svg/wifi-connect-logo.svg" alt="Wi-Fi Connect Logo" class="logo-img" />
+        <p>Voucher generator for Wi-Fi Connect.</p>
+      </section>
+      <section class="flex form-container">
+        <div class="flex group">
+          <h6>Duration:</h6>
+          <div class="flex input-select-group">
+            <div class="relative input-container">
+              <input type="number" placeholder="0" min="0" class="input" id="data-duration-time" />
+              <div id="duration-input-line" class="absolute input-line"></div>
+            </div>
+            <div class="relative flex select-group">
+              <select class="btn-standard" id="data-duration-type">
+                <option value="min">Minutes</option>
+                <option value="hr">Hours</option>
+                <option value="day">Days</option>
+              </select>
+              <i class="absolute icon">&#xe70d;</i>
+            </div>
+          </div>
+          <p id="duration-error-msg" class="hidden">Enter a valid duration.</p>
+        </div>
+        <div class="flex group">
+          <h6>Voucher Codes:</h6>
+          <div class="relative flex voucher-textarea">
+            <textarea id="voucher-line-counter" class="textarea line-counter">1</textarea>
+            <textarea
+              id="data-vouchers-code"
+              wrap="off"
+              placeholder="xxxxxx"
+              class="textarea voucher-editor"
+            ></textarea>
+            <div id="voucher-input-line" class="absolute input-line"></div>
+          </div>
+          <p id="voucher-error-msg" class="hidden">Enter a valid voucher code.</p>
+        </div>
+        <div class="flex details">
+          <input type="checkbox" id="more-settings" />
+          <label for="more-settings" class="flex more-settings">More options <i class="icon">&#xe70d;</i> </label>
+          <div class="more-settings-container">
+            <div class="flex group-option">
+              <p>Layout Size (8.5x13in):</p>
+              <div class="relative input-switch">
+                <input type="checkbox" id="data-page-layout" checked />
+                <label for="data-page-layout" class="block"></label>
+              </div>
+            </div>
+            <div class="flex group-option">
+              <p>Duration Background:</p>
+              <div class="flex input-select-group">
+                <input type="color" class="input color btn-standard" id="data-duration-bg" />
+              </div>
+            </div>
+            <div class="flex group-option">
+              <p>Colored Logo:</p>
+              <div class="relative input-switch">
+                <input type="checkbox" id="data-color-logo" />
+                <label for="data-color-logo" class="block"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="absolute form-footer">
+        <button id="data-submit-btn">Save changes</button>
+      </section>
+    </aside>
+    <main>
+      <header class="header-section">
+        <div class="flex header-container">
+          <h1>Generated Preview</h1>
+          <button id="print-btn" class="btn-standard" disabled><i class="icon">&#xe749;</i>Print vouchers</button>
+        </div>
+      </header>
+      <section class="flex voucher-preview-container">
+        <div class="flex get-started">
+          <i class="icon">&#xe946;</i>
+          <div class="flex">
+            <h2>Hello there, let's get started here.</h2>
+            <p>
+              Please copy the code then paste it on the console drawer at Omada Controller page.
+              <u id="learn-more-btn">Learn more</u>
+            </p>
+            <dialog id="learn-more-dialog">
+              <header class="flex">
+                <h2>Let's get started</h2>
+                <button id="dialog-close-btn" class="btn-close icon">&#xe711;</button>
+              </header>
+              <div class="flex body">
+                <p>
+                  This is my easy way to scrape the voucher codes from Omada Controller site and copy it to my clipboard
+                  instead of copying it one-by-one. However, mobile devices do not support this method.
+                </p>
+                <ol class="flex">
+                  <li class="flex">
+                    <p>1. Copy this code to your clipboard</p>
+                    <div class="relative code-block">
+                      <button class="absolute btn-standard icon" title="Copy to clipboard">&#xe8c8;</button>
+                      <span class="blue">let</span>
+                      <span class="skyblue">scrapedCodes</span>
+                      <span>=</span>
+                      <span class="string">""</span><span>;</span><br />
+                      <span class="skyblue">document</span><span>.</span><span class="yellow">querySelectorAll</span
+                      ><span class="gold">(</span><span class="string">"[name='code'] .td-content .content"</span
+                      ><span class="gold">)</span><span>.</span><span class="yellow">forEach</span
+                      ><span class="gold">(</span><span class="skyblue">elmnt</span>
+                      <span class="blue">=></span>
+                      <span class="magenta">{</span><span class="skyblue">scrapedCodes</span>
+                      <span>+=</span>
+                      <span class="skyblue">elmnt</span><span>.</span><span class="skyblue">innerText</span>
+                      <span>+</span>
+                      <span class="string">"</span><span class="orange">\n</span><span class="string">"</span
+                      ><span class="magenta">}</span><span class="gold">)</span><span>;</span><br />
+                      <span class="skyblue">console</span><span>.</span><span class="yellow">log</span
+                      ><span class="gold">(</span><span class="skyblue">scrapedCodes</span><span class="gold">)</span
+                      ><span>;</span>
+                    </div>
+                  </li>
+                  <li class="flex">
+                    <p>
+                      2. Go to your Omada Controller tab then at your voucher section select 50/page, this is to speed
+                      up scraping the voucher codes
+                    </p>
+                    <img src="assets/img/get-started/50-per-page.jpg" alt="50/page" />
+                  </li>
+                  <li class="flex">
+                    <p>
+                      3. Press (F12) to open the browser dev tool, paste (Ctrl+V) the codes at console drawer then hit
+                      Enter.
+                    </p>
+                    <img src="assets/img/get-started/console-drawer.jpg" alt="Console drawer" />
+                  </li>
+                  <li class="flex">
+                    <p>
+                      4. Copy all the voucher codes then go to Voucher Generator tab to paste it on voucher codes
+                      textarea. Repeat the proccess until you copied all the desired voucher codes to print.
+                    </p>
+                    <img src="assets/img/get-started/copy-paste-codes.jpg" alt="Copy & Paste the voucher codes" />
+                  </li>
+                </ol>
+              </div>
+              <button class="ok">OK</button>
+            </dialog>
+          </div>
+          <button id="copy-code-btn" class="btn-standard">Copy code</button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

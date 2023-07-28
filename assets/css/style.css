@@ -1,0 +1,916 @@
+/* #############################################################
+      #
+      #  Font name: Segoe UI Variable
+      #  Owner: Microsoft Corporation
+      #  Link: https://learn.microsoft.com/en-us/windows/apps/design/downloads/#fonts
+      #
+      ################################################################ */
+
+@font-face {
+  font-family: "Segoe UI Variable Display";
+  src: url(../fonts/Segoe-UI-Variable-Static-Display-Light.ttf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Segoe UI Variable Display";
+  src: url(../fonts/Segoe-UI-Variable-Static-Display-Semilight.ttf);
+  font-weight: 350;
+}
+
+@font-face {
+  font-family: "Segoe UI Variable Display";
+  src: url(../fonts/Segoe-UI-Variable-Static-Display.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Segoe UI Variable Display";
+  src: url(../fonts/Segoe-UI-Variable-Static-Display-Semibold.ttf);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Segoe UI Variable Display";
+  src: url(../fonts/Segoe-UI-Variable-Static-Display-Bold.ttf);
+  font-weight: 700;
+}
+
+/* ################################################################ */
+
+@font-face {
+  font-family: "Segoe UI Variable Small";
+  src: url(../fonts/Segoe-UI-Variable-Static-Small-Light.ttf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Segoe UI Variable Small";
+  src: url(../fonts/Segoe-UI-Variable-Static-Small-Semilight.ttf);
+  font-weight: 350;
+}
+
+@font-face {
+  font-family: "Segoe UI Variable Small";
+  src: url(../fonts/Segoe-UI-Variable-Static-Small.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Segoe UI Variable Small";
+  src: url(../fonts/Segoe-UI-Variable-Static-Small-Semibold.ttf);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Segoe UI Variable Small";
+  src: url(../fonts/Segoe-UI-Variable-Static-Small-Bold.ttf);
+  font-weight: 700;
+}
+
+/* ################################################################ */
+
+@font-face {
+  font-family: "Segoe UI Variable Text";
+  src: url(../fonts/Segoe-UI-Variable-Static-Text-Light.ttf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Segoe UI Variable Text";
+  src: url(../fonts/Segoe-UI-Variable-Static-Text-Semilight.ttf);
+  font-weight: 350;
+}
+
+@font-face {
+  font-family: "Segoe UI Variable Text";
+  src: url(../fonts/Segoe-UI-Variable-Static-Text.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Segoe UI Variable Text";
+  src: url(../fonts/Segoe-UI-Variable-Static-Text-Semibold.ttf);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Segoe UI Variable Text";
+  src: url(../fonts/Segoe-UI-Variable-Static-Text-Bold.ttf);
+  font-weight: 700;
+}
+
+/* ################################################################ */
+
+@font-face {
+  font-family: "Segoe Fluent Icons";
+  src: url(../fonts/Segoe-Fluent-Icons.ttf);
+}
+
+/* ################################################################ */
+
+:root {
+  --page-layout: 13in;
+  --duration-bg-color: #000000;
+  --duration-text-color: #ffffff;
+  --voucher-logo: url(../svg/wifi-connect-logo-black.svg);
+}
+
+html {
+  overflow: hidden;
+  background-color: #1a2030;
+}
+
+* {
+  font-family: "Segoe UI Variable Text";
+  color: #ffffff;
+  font-size: 14px;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.block {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.icon {
+  font-family: "Segoe Fluent Icons" !important;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  color: currentColor;
+  user-select: none;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  background-color: #005fb8;
+  color: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  width: 100%;
+  height: 32px;
+  gap: 8px;
+  padding: 0 24px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:active {
+  opacity: 0.8;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+button:disabled {
+  pointer-events: none;
+  background-color: rgba(255, 255, 255, 0.1581);
+  border: none;
+}
+
+.btn-standard {
+  flex-direction: row;
+  width: auto;
+  background-color: rgba(255, 255, 255, 0.0605);
+  color: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.093);
+  border-left: 1px solid rgba(255, 255, 255, 0.0698);
+  border-right: 1px solid rgba(255, 255, 255, 0.0698);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.0698);
+}
+
+.btn-standard:hover {
+  background-color: rgba(255, 255, 255, 0.0837);
+}
+
+.btn-standard:active {
+  background-color: rgba(255, 255, 255, 0.0326);
+  color: rgba(255, 255, 255, 0.786);
+  border: 1px solid rgba(255, 255, 255, 0.093);
+}
+
+.btn-standard:disabled {
+  background-color: rgba(255, 255, 255, 0.0419);
+  color: rgba(255, 255, 255, 0.3628);
+  border: 1px solid rgba(255, 255, 255, 0.093);
+}
+
+h1 {
+  font-size: 24px;
+}
+
+p {
+  font-family: "Segoe UI Variable Small";
+  font-size: 12px;
+}
+
+aside {
+  flex-direction: column;
+  background-color: #1a2030;
+  flex-shrink: 0;
+  width: 300px;
+  height: 100vh;
+  border-right: 1px solid #30363d;
+}
+
+.input-container {
+  height: 32px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.input-line {
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.5442);
+}
+
+.input-container .input:focus + .input-line,
+.voucher-textarea .textarea:focus + .input-line {
+  height: 2px;
+  background-color: #0067c0;
+}
+
+.input-error {
+  height: 2px;
+  background-color: #fe3159;
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, 0.7);
+  border: 1px solid #30363d;
+  padding: 0 11px;
+  border-radius: 4px;
+}
+
+.input:focus {
+  border: 1px solid #30363d;
+}
+
+.textarea {
+  background-color: transparent;
+  border: none;
+  resize: none;
+}
+
+.voucher-textarea {
+  height: 256px;
+  background-color: rgba(30, 30, 30, 0.7);
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.line-counter {
+  color: #6e7681;
+  text-align: right;
+  width: 46px;
+  padding: 8px 16px 8px 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.voucher-editor {
+  flex-grow: 1;
+  padding: 8px;
+}
+
+.heading-container {
+  padding: 48px 32px 24px;
+  border-bottom: 1px solid #30363d;
+}
+
+.heading-container > div {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 0;
+}
+
+.heading-container > div * {
+  color: #a3a6ac;
+}
+
+.heading-container p {
+  padding-top: 4px;
+}
+
+.logo-img {
+  height: 32px;
+  user-select: none;
+  pointer-events: none;
+}
+
+.form-container {
+  flex-direction: column;
+  gap: 24px;
+  padding: 16px 32px;
+  height: calc(100vh - 226px);
+  overflow-y: auto;
+}
+
+.group {
+  flex-direction: column;
+  gap: 8px;
+}
+
+.group-option {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.group h6,
+.group-option h6 {
+  font-family: "Segoe UI Variable Small";
+  font-size: 12px;
+}
+
+.group p {
+  color: #fe3159;
+}
+
+.details {
+  flex-direction: column;
+  gap: 24px;
+}
+
+.more-settings {
+  align-items: center;
+  gap: 8px;
+  height: 32px;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+  user-select: none;
+}
+
+.more-settings:hover {
+  background-color: rgba(255, 255, 255, 0.0605);
+}
+
+.more-settings:active {
+  background-color: rgba(255, 255, 255, 0.0419);
+}
+
+.more-settings-container {
+  display: none;
+}
+
+#more-settings {
+  display: none;
+}
+
+#more-settings:checked ~ .more-settings-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-footer {
+  bottom: 0;
+  width: 100%;
+  padding: 32px;
+  background-color: #1a2030;
+  border-top: 1px solid #30363d;
+}
+
+.input-select-group .input-container {
+  border-radius: 4px 0 0 4px;
+}
+
+.input-select-group .input {
+  border-radius: 4px 0 0 4px;
+}
+
+.select-group select {
+  appearance: none;
+  border-radius: 0 4px 4px 0;
+  width: auto;
+  padding: 0 26px 0 8px;
+}
+
+.select-group select option {
+  color: rgba(0, 0, 0, 0.8956);
+}
+
+.select-group .icon {
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  line-height: 10px;
+  pointer-events: none;
+}
+
+.input.color {
+  flex-shrink: 0;
+  border-radius: 4px;
+  height: 20px;
+  width: 38px;
+  padding: 0 4px;
+  cursor: pointer;
+}
+
+.input-switch input {
+  display: none;
+}
+
+.input-switch label {
+  cursor: pointer;
+  transition: all 200ms;
+  background-color: transparent;
+  width: 38px;
+  height: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.333);
+  border-radius: 10px;
+}
+
+.input-switch label::after {
+  content: "";
+  display: block;
+  pointer-events: none;
+  position: absolute;
+  transition: all 200ms;
+  inset: 4px;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.input-switch:hover label {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.input-switch:hover label::after {
+  background-color: #ffffff;
+}
+
+.input-switch input:checked ~ label {
+  background-color: rgb(0, 95, 184);
+  border: 1px solid transparent;
+}
+
+.input-switch input:checked ~ label::after {
+  background-color: #ffffff;
+  left: 21px;
+}
+
+.input-switch:hover input:checked ~ label {
+  background-color: rgba(0, 95, 184, 0.8);
+}
+
+.input-switch:hover input:checked ~ span {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+main {
+  flex-grow: 1;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+.header-section {
+  z-index: 1;
+  position: sticky;
+  top: 0;
+  background-color: #1a2030;
+  padding: 16px 16px 0;
+}
+
+.header-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  background: linear-gradient(180deg, rgba(26, 32, 48, 0.666), transparent);
+  width: 100%;
+  height: 16px;
+}
+
+.header-container {
+  justify-content: space-between;
+  align-items: center;
+  background: url(../img/bloom-mica-dark.png) center center/cover no-repeat;
+  height: 80px;
+  padding: 0 32px;
+  border-radius: 8px;
+}
+
+.voucher-preview-container {
+  flex-direction: column;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.page-layout {
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 1px;
+  background-color: #ffffff;
+  width: 8.5in;
+  height: var(--page-layout);
+  margin: auto;
+  padding: calc(0.2in + 1px);
+}
+
+.voucher-container {
+  flex-shrink: 0;
+  height: 96px;
+  width: 154px;
+  outline: #bfbfbf solid 1px;
+  overflow: hidden;
+}
+
+.voucher-container .logo {
+  background-image: var(--voucher-logo);
+  background-size: contain;
+  background-repeat: no-repeat;
+  user-select: none;
+  height: 18px;
+  margin: 20px 0 0 11px;
+}
+
+.voucher-container p {
+  font-family: "Segoe UI Variable Display";
+  font-weight: bold;
+  color: #000000;
+  font-size: 19px;
+  margin: 14px 0 0 11px;
+}
+
+.voucher-container p::after {
+  content: "Voucher Code";
+  position: absolute;
+  left: 2px;
+  top: 26px;
+  font-weight: normal;
+  font-size: 7px;
+}
+
+.voucher-container span {
+  user-select: none;
+  top: 3px;
+  right: 3px;
+  font-family: "Segoe UI Variable Display";
+  font-weight: bold;
+  font-size: 11px;
+  text-align: center;
+  line-height: 20px;
+  color: var(--duration-text-color);
+  background-color: var(--duration-bg-color);
+  height: 20px;
+  min-width: 44px;
+  padding: 0 8px;
+  border-radius: 4px;
+}
+
+.get-started {
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  margin-top: 96px;
+}
+
+.get-started > i {
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.get-started > div {
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 80%;
+}
+
+.get-started h2 {
+  font-size: 16px;
+  text-align: center;
+}
+
+.get-started p {
+  text-align: center;
+  width: 60ch;
+  max-width: 100%;
+  color: #a3a6ac;
+}
+
+.get-started u {
+  font-size: 12px;
+  color: #a3a6ac;
+  cursor: pointer;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.666);
+}
+
+dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  flex-direction: column;
+  background-color: #1a2030;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  width: 512px;
+  opacity: 0;
+  transition: all 200ms;
+}
+
+dialog.open {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+dialog header {
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 8px 8px 16px;
+}
+
+.btn-close {
+  background-color: transparent;
+  border: none;
+  width: 32px;
+  padding: 0 0 0 2px;
+  border-radius: 4px;
+}
+
+.btn-close:hover {
+  background-color: rgba(255, 255, 255, 0.0605);
+}
+
+.btn-close:active {
+  background-color: rgba(255, 255, 255, 0.0419);
+  color: rgba(255, 255, 255, 0.786);
+  border: none;
+}
+
+dialog .body {
+  flex-direction: column;
+  gap: 32px;
+  padding: 0 8px 0 16px;
+}
+
+dialog .body p {
+  text-align: left;
+  margin: 0;
+}
+
+dialog .body * {
+  font-size: 12px;
+}
+
+dialog .body ol {
+  flex-direction: column;
+  gap: 16px;
+  height: 384px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+dialog .body ol li {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+dialog .body ol li p {
+  width: 60ch;
+  max-width: 100%;
+}
+
+dialog .body ol li img {
+  margin-left: 8px;
+  border-radius: 4px;
+  border: 1px solid #30363d;
+  max-width: calc(100% - 16px);
+}
+
+.code-block {
+  background-color: rgba(30, 30, 30, 0.7);
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  padding: 8px 42px 8px 8px;
+  margin: 0 8px;
+}
+
+.code-block,
+.code-block * {
+  font-family: Consolas, "Courier New", monospace;
+  line-height: 1.6;
+}
+
+.code-block button {
+  top: 6px;
+  right: 6px;
+  font-size: 14px;
+  line-height: 14px;
+  padding: 0;
+  width: 32px;
+}
+
+dialog button.ok {
+  width: calc(100% - 32px);
+  margin: 16px;
+}
+
+.blue {
+  color: #569cd6;
+}
+
+.skyblue {
+  color: #9cdcfe;
+}
+
+.string {
+  color: #ce9178;
+}
+
+.yellow {
+  color: #dcdcaa;
+}
+
+.gold {
+  color: #ffd700;
+}
+
+.magenta {
+  color: #da70d6;
+}
+
+.orange {
+  color: #d7ba7d;
+}
+
+@media print {
+  @page {
+    margin: 0.2in;
+  }
+
+  @top-center {
+    content: "";
+  }
+
+  @bottom-center {
+    content: "";
+  }
+
+  html {
+    background-color: #ffffff;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+  }
+
+  aside {
+    display: none !important;
+  }
+
+  main {
+    overflow: hidden;
+    height: auto;
+  }
+
+  .header-section {
+    display: none !important;
+  }
+
+  .voucher-preview-container {
+    margin: 0;
+  }
+
+  .page-layout {
+    width: auto;
+    height: auto;
+    padding: 2px 0 2px 1px;
+    page-break-after: always;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  *::-webkit-scrollbar {
+    background-color: transparent;
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: rgba(151, 154, 162, 0.5);
+    border-radius: 4px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(151, 154, 162, 0.75);
+  }
+
+  *::-webkit-scrollbar-thumb:active {
+    background-color: rgb(151, 154, 162);
+  }
+
+  *::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  html {
+    overflow: auto;
+  }
+
+  body {
+    flex-direction: column-reverse;
+  }
+
+  aside {
+    width: 100%;
+    height: auto;
+    border: none;
+  }
+
+  .heading-container {
+    padding: 0 5%;
+    border-bottom: 1px solid #30363d;
+  }
+
+  main {
+    height: calc(100vh - 64px);
+  }
+
+  .header-section {
+    padding: 0;
+  }
+
+  .header-container {
+    height: 64px;
+    padding: 0 5%;
+    border-radius: 0;
+  }
+
+  #print-btn {
+    width: 32px;
+    padding: 0;
+  }
+
+  .heading-container {
+    border-top: 1px solid #30363d;
+    border-bottom: none;
+  }
+
+  .heading-container > div {
+    display: flex;
+  }
+
+  .heading-container > img {
+    display: none;
+  }
+
+  .heading-container > p {
+    display: none;
+  }
+
+  .form-container {
+    padding: 16px 5%;
+    height: auto;
+  }
+
+  .form-footer {
+    position: static;
+    padding: 5%;
+    border-top: none;
+  }
+}
