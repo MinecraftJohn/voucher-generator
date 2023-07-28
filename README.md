@@ -18,7 +18,7 @@ Another challenge I faced was copying the voucher codes from Omada Controller to
 - Using the look and feel of [Microsoft's Windows UI Controls](https://www.figma.com/community/file/1159947337437047524) which conform to the Fluent Design System.
 - Responsive enough for mobile and large screen sizes.
 
-Note: You can't use the script to scrape the voucher codes on mobile because mobile browsers don't have devtool.
+Note: You can't use the script to scrape the voucher codes on mobile because mobile browsers don't have devtool. If you are looking for the old way (Word and Excel) then click here to [learn more](https://github.com/MinecraftJohn/voucher-generator/blob/main/assets/voucher-layout-history/How%20to%20use%20advance%20voucher%20layout.md).
 
 ### Changelog
 

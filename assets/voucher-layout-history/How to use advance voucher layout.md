@@ -1,6 +1,7 @@
-<h2 align="center">
-  <img src="https://raw.githubusercontent.com/MinecraftJohn/wifi-connect/c7b20d4265e91d601fb6f1e531d9c90a1ff9ae15/assets/svg/wifi-connect-logo.svg" height="72" alt="Wi-Fi Connect - An Customized Omada Portal"/>
-</h2>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/MinecraftJohn/wifi-connect/c7b20d4265e91d601fb6f1e531d9c90a1ff9ae15/assets/svg/wifi-connect-logo.svg" height="72" alt="Wi-Fi Connect Logo"/>
+  <h1>Custom Voucher Design</h1>
+</div>
 
 > Note: Please ensure that you have Microsoft Office (Word and Excel) installed on your computer. Additionally, having a basic knowledge of these applications would be beneficial. If you do not have these applications installed on your computer, you can use the voucher generator as an alternative.
 
@@ -10,15 +11,20 @@ This is my hassle-free method for printing voucher codes on my customized vouche
 
 ### How to use
 
-1. Create a voucher on your Omada Controller
-2. I recommend to show `50 /page` for a fast scraping of data
-*img
-3. On your Omada Controller site `right-click` and choose `Inspect Element` to Enable developer tool.
-*img
-4. On your web developer tool paste this code in console and press enter
+1. Create a vouchers on your Omada Controller if no created yet.
+2. I recommend to show `50 /page` for a fast scraping of data<br />
+![50 /page](/assets/img/get-started/50-per-page.jpg)
+3. On your Omada Controller site `right-click` and choose `Inspect Element` to Enable developer tool or press `F12`.<br />
+![test](/assets/img/get-started/console-drawer.jpg)
+4. On your web devtool paste this code in console drawer and press enter
    ```js
-   const elements = document.querySelectorAll("[name='code'] .td-content .content"); let textContent = ""; elements.forEach((element) => {textContent += element.textContent + "\n"}); console.log(textContent);
+   let scrapedCodes = ""; document.querySelectorAll("[name='code'] .td-content .content").forEach((elmnt) => {scrapedCodes += elmnt.innerText + "\n"}); console.log(scrapedCodes);
    ```
-*img
+5. Copy all the voucher codes then go to Excel paste it below the table header. Repeat the proccess until you copied all the desired voucher codes to print.<br />
+![test](/assets/img/get-started/copy-paste-codes-old.jpg)
+6. After pasting all the desired voucher codes to print open the Word file a pop-up message will appear then click Yes to continue. You can then print the document after checking if its really the right one.
 
-5. awdad
+Note: Sometimes the link of data for Word is broken, to fix this just relink the Recipient List at Mailings section in Word.
+
+Download the Voucher Layout file here: [Voucher Layout - 2023 (ADVANCE).docx](https://www.dropbox.com/scl/fi/3ed7x786x8tyvmj7ndsv6/Voucher-Layout-2023-ADVANCED.docx?rlkey=wkzd5x4n9tqrb7745fuaa7tms&dl=1)<br />
+Download the Excel file here: [Enter Voucher Codes here.xlsx](https://www.dropbox.com/scl/fi/kdokwxhrgbhdm3bqrdbfh/Enter-Voucher-Codes-here.xlsx?rlkey=z14q27racitcoki2xjvthj1ie&dl=1)

@@ -2,6 +2,11 @@
 All notable development changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
 
+### v23.7.28a
+> July 28, 2023
+- Updated `README.md`.
+- Updated `How to use advance voucher layout.md`.
+
 ### v23.7.27a
 > July 27, 2023
 - Updated `README.md`.
