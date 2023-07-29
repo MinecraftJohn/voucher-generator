@@ -776,52 +776,6 @@ dialog button.ok {
   color: #d7ba7d;
 }
 
-@media print {
-  @page {
-    margin: 0.2in;
-  }
-
-  @top-center {
-    content: "";
-  }
-
-  @bottom-center {
-    content: "";
-  }
-
-  html {
-    background-color: #ffffff;
-  }
-
-  body {
-    -webkit-print-color-adjust: exact;
-  }
-
-  aside {
-    display: none !important;
-  }
-
-  main {
-    overflow: hidden;
-    height: auto;
-  }
-
-  .header-section {
-    display: none !important;
-  }
-
-  .voucher-preview-container {
-    margin: 0;
-  }
-
-  .page-layout {
-    width: auto;
-    height: auto;
-    padding: 2px 0 2px 1px;
-    page-break-after: always;
-  }
-}
-
 @media screen and (min-width: 800px) {
   *::-webkit-scrollbar {
     background-color: transparent;
@@ -912,5 +866,50 @@ dialog button.ok {
     position: static;
     padding: 5%;
     border-top: none;
+  }
+}
+
+@media print {
+  @page {
+    margin: 0;
+  }
+
+  @top-center {
+    content: "";
+  }
+
+  @bottom-center {
+    content: "";
+  }
+
+  html {
+    background-color: #ffffff;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+  }
+
+  aside {
+    display: none !important;
+  }
+
+  .header-section {
+    display: none !important;
+  }
+
+  main {
+    overflow: hidden;
+    height: auto;
+  }
+
+  .voucher-preview-container {
+    gap: 0;
+    margin: 0;
+    background-color: red;
+  }
+
+  .page-layout {
+    page-break-after: always;
   }
 }
