@@ -9,9 +9,10 @@ This project allows me to print vouchers with a customized design from any devic
 
 Another challenge I faced was copying the voucher codes from Omada Controller to my custom design vouchers. To solve this problem, I wrote a script that scrapes the codes from Omada Controller and makes my copying process much faster.
 
-![Voucher Generator UI Preview](https://github.com/MinecraftJohn/MinecraftJohn/blob/main/assets/other-repository/voucher-generator/voucher-generator-desktop%20.png)
+<kbd><img src="https://i.imgur.com/2mVMi0w.png" alt="Voucher Generator UI Preview"></kbd>
 
 ### Features
+
 - Generate printable vouchers in seconds.
 - Customize your voucher settings/preference.
 - With script that scrapes the codes from Omada Controller and makes copying process much faster.

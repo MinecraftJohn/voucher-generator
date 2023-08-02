@@ -2,6 +2,20 @@
 All notable development changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
 
+### v23.8.2a
+> August 2, 2023
+- Optimized CSS.
+
+### v23.7.31a
+> July 31, 2023
+- Updated `README.md`.
+
+### v23.7.29a
+> July 29, 2023
+- Fixed bug, print button not working.
+- Fixed vouchers being blurry on print mode layout.
+- Added a feature when a vouchers is created the main section should scroll to top.
+
 ### v23.7.28a
 > July 28, 2023
 - Updated `README.md`.

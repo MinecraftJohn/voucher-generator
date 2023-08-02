@@ -30,8 +30,6 @@ moreSettingsBtn.onchange = () => {
   }
 };
 
-document.getElementById("print-btn").onclick = () => print();
-
 copyCodeBtn.onclick = () => {
   navigator.clipboard
     .writeText(codeText)
@@ -116,7 +114,7 @@ const saveFormData = () => {
       </div>`;
   });
   document.getElementById("print-btn").removeAttribute("disabled");
-  document.querySelector("html").scrollTop = 0;
+  document.querySelector("main").scrollTop = 0;
 };
 
 const triggeredErrorMsgDuration = (value) => {
@@ -197,6 +195,7 @@ const checkMediaScreen = () => {
       !document.querySelector(".get-started") ? "" : "disabled"
     }><i class="icon">&#xe749;</i></button>`;
   }
+  document.getElementById("print-btn").onclick = () => print();
 };
 checkMediaScreen();
 mediaScreen.onchange = () => {

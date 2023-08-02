@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
 
+### v1.0.1
+> August 2, 2023
+- Fixed bug, print button not working.
+- Fixed vouchers being blurry on print mode layout.
+- Added a feature when a vouchers is created the main section should scroll to top.
+- Optimized CSS codes.
+
 ### v1.0.0
 > July 26, 2023
 - Fully implemented voucher generator for WiFi-Connect.
