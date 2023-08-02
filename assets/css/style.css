@@ -234,7 +234,6 @@ p {
 
 aside {
   flex-direction: column;
-  background-color: #1a2030;
   flex-shrink: 0;
   width: 300px;
   height: 100vh;
@@ -401,7 +400,6 @@ aside {
   bottom: 0;
   width: 100%;
   padding: 32px;
-  background-color: #1a2030;
   border-top: 1px solid #30363d;
 }
 
@@ -505,8 +503,8 @@ main {
   z-index: 1;
   position: sticky;
   top: 0;
-  background-color: #1a2030;
   padding: 16px 16px 0;
+  background-color: #1a2030;
 }
 
 .header-section::after {
@@ -906,7 +904,6 @@ dialog button.ok {
   .voucher-preview-container {
     gap: 0;
     margin: 0;
-    background-color: red;
   }
 
   .page-layout {

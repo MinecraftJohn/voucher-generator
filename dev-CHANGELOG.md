@@ -2,6 +2,14 @@
 All notable development changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
 
+### v23.8.2a
+> August 2, 2023
+- Optimized CSS.
+
+### v23.7.31a
+> July 31, 2023
+- Updated `README.md`.
+
 ### v23.7.29a
 > July 29, 2023
 - Fixed bug, print button not working.
