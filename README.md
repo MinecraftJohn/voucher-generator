@@ -1,6 +1,6 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/MinecraftJohn/wifi-connect/c7b20d4265e91d601fb6f1e531d9c90a1ff9ae15/assets/svg/wifi-connect-logo.svg" height="72" alt="Wi-Fi Connect Logo"/>
-  <h1>Custom Voucher Design Generator</h1>
+  <img src="https://i.imgur.com/x4n6SUk.png" alt="Wi-Fi Connect Logo"/>
+  <h1>Voucher Design Generator</h1>
 </div>
 
 ### What is this?
@@ -9,7 +9,7 @@ This project allows me to print vouchers with a customized design from any devic
 
 Another challenge I faced was copying the voucher codes from Omada Controller to my custom design vouchers. To solve this problem, I wrote a script that scrapes the codes from Omada Controller and makes my copying process much faster.
 
-<kbd><img src="https://i.imgur.com/2mVMi0w.png" alt="Voucher Generator UI Preview"></kbd>
+<kbd><img src="https://i.imgur.com/SMPBzg0.png" alt="Voucher Generator UI Preview"></kbd>
 
 ### Features
 
